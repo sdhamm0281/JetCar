@@ -1,5 +1,9 @@
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+
 import cv2
-from sensors.camera import Camera
+from autonomous_car.sensors.camera import Camera
 
 camera = Camera()
 
