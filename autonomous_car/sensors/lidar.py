@@ -1,7 +1,7 @@
 class Lidar:
     def __init__(self):
-        pass  # Add actual driver later
+        pass
 
     def get_distance_ahead(self):
-        # Placeholder
-        return 1000  # mm
+        # Always return "no obstacle" for now
+        return 1000

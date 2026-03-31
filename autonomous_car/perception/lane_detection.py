@@ -1,16 +1,22 @@
 import cv2
 import numpy as np
+from config import LOWER_COLOR, UPPER_COLOR
 
 def detect_lane_center(frame):
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    blur = cv2.GaussianBlur(gray, (5,5), 0)
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-    edges = cv2.Canny(blur, 50, 150)
+    mask = cv2.inRange(hsv, LOWER_COLOR, UPPER_COLOR)
 
-    height, width = edges.shape
-    roi = edges[int(height*0.6):height, :]
+    height, width = mask.shape
 
-    histogram = np.sum(roi, axis=0)
-    center = np.argmax(histogram)
+    # Focus on bottom 40% of image
+    roi = mask[int(height * 0.6):height, :]
 
-    return center, width
+    M = cv2.moments(roi)
+
+    if M["m00"] == 0:
+        return width // 2, width  # default center if no line found
+
+    cx = int(M["m10"] / M["m00"])
+
+    return cx, width

@@ -4,10 +4,8 @@ class Decision:
     def compute(self, lane_center, frame_width, obstacle_distance):
         error = lane_center - (frame_width / 2)
 
-        # Steering
         steering = -error * STEERING_GAIN
 
-        # Throttle logic
         if obstacle_distance < OBSTACLE_DISTANCE_STOP:
             throttle = 0
         else:
