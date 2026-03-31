@@ -7,7 +7,7 @@ from perception.lane_detection import detect_lane_center
 from planning.decision import Decision
 from control.controller import Controller
 from utils.serial_comm import SerialComm
-from config import LOOP_HZ, SERIAL_PORT, BAUD_RATE, SHOW_CAMERA
+from autonomous_car.config import LOOP_HZ, SERIAL_PORT, BAUD_RATE, SHOW_CAMERA
 
 # ===== INIT =====
 camera = Camera()

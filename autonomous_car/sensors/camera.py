@@ -1,5 +1,5 @@
 import cv2
-from config import CAMERA_INDEX, FRAME_WIDTH, FRAME_HEIGHT
+from autonomous_car.config import CAMERA_INDEX, FRAME_WIDTH, FRAME_HEIGHT
 
 class Camera:
     def __init__(self):

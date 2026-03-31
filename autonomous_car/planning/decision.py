@@ -1,4 +1,4 @@
-from config import MAX_THROTTLE, BASE_THROTTLE, STEERING_GAIN, OBSTACLE_DISTANCE_STOP
+from autonomous_car.config import MAX_THROTTLE, BASE_THROTTLE, STEERING_GAIN, OBSTACLE_DISTANCE_STOP
 
 class Decision:
     def compute(self, lane_center, frame_width, obstacle_distance):

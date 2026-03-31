@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from config import LOWER_COLOR, UPPER_COLOR
+from autonomous_car.config import LOWER_COLOR, UPPER_COLOR
 
 def detect_lane_center(frame):
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
