@@ -1,5 +1,9 @@
-from control.controller import Controller
-from utils.serial_comm import SerialComm
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+
+from autonomous_car.control.controller import Controller
+from autonomous_car.utils.serial_comm import SerialComm
 import time
 
 serial_comm = SerialComm('/dev/ttyUSB0', 115200)
